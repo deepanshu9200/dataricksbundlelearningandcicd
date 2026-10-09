@@ -1,0 +1,15 @@
+resources:
+  jobs:
+    dabjobtest:
+      name: dabjobtest
+      tasks:
+        - task_key: test
+          notebook_task:
+            notebook_path: "${workspace.file_path}/src/Notebooks/demo"
+
+            base_parameters:
+              schema: ${var.schema}
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED

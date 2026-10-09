@@ -1,0 +1,15 @@
+resources:
+  pipelines:
+    pipeline_demopipeline:
+      name: demopipeline
+      libraries:
+        - glob:
+            include: "${workspace.file_path}/src/pipelines/demopipeline/transformations/**"
+      schema: bronze
+      continuous: false
+      development: false
+      photon: true
+      channel: CURRENT
+      catalog: dev_databricks_assetbundle
+      serverless: true
+      root_path: "${workspace.file_path}/src/pipelines/demopipeline"
